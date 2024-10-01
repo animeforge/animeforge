@@ -6847,7 +6847,7 @@ static void rna_def_fileselect_params(BlenderRNA *brna)
 
   prop = RNA_def_property(srna, "use_filter_blender", PROP_BOOLEAN, PROP_NONE);
   RNA_def_property_boolean_sdna(prop, NULL, "filter", FILE_TYPE_BLENDER);
-  RNA_def_property_ui_text(prop, "Filter Blender", "Show .blend files");
+  RNA_def_property_ui_text(prop, "Filter Blender", "Show .af files");
   RNA_def_property_ui_icon(prop, ICON_FILE_BLEND, 0);
   RNA_def_property_update(prop, NC_SPACE | ND_SPACE_FILE_PARAMS, NULL);
 

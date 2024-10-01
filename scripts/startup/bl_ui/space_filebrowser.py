@@ -141,11 +141,11 @@ class FILEBROWSER_PT_filter(FileBrowserPanel, Panel):
             row = col.row()
             row.label(icon='FILE_BLEND')
             row.prop(params, "use_filter_blender",
-                     text=".blend Files", toggle=False)
+                     text=".af Files", toggle=False)
             row = col.row()
             row.label(icon='FILE_BACKUP')
             row.prop(params, "use_filter_backup",
-                     text="Backup .blend Files", toggle=False)
+                     text="Backup .af Files", toggle=False)
             row = col.row()
             row.label(icon='FILE_IMAGE')
             row.prop(params, "use_filter_image", text="Image Files", toggle=False)

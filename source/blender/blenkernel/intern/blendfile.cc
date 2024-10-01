@@ -69,7 +69,7 @@
 
 bool BKE_blendfile_extension_check(const char *str)
 {
-  const char *ext_test[4] = {".blend", ".ble", ".blend.gz", nullptr};
+  const char *ext_test[4] = {".af", nullptr};
   return BLI_path_extension_check_array(str, ext_test);
 }
 

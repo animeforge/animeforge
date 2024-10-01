@@ -2096,7 +2096,7 @@ static int arg_handle_load_file(int UNUSED(argc), const char **argv, void *data)
     }
     else if (!BKE_blendfile_extension_check(filepath)) {
       /* Unrelated arguments should not be treated as new blend files. */
-      error_msg = "argument has no '.blend' file extension, not using as new file";
+      error_msg = "argument has no '.af' file extension, not using as new file";
     }
 
     if (error_msg) {

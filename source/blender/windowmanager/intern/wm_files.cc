@@ -3195,7 +3195,7 @@ static void wm_filepath_default(const Main *bmain, char *filepath)
 {
   if (bmain->filepath[0] == '\0') {
     char filename_untitled[FILE_MAXFILE];
-    SNPRINTF(filename_untitled, "%s.blend", DATA_("untitled"));
+    SNPRINTF(filename_untitled, "%s.af", DATA_("untitled"));
     BLI_path_filename_ensure(filepath, FILE_MAX, filename_untitled);
   }
 }
@@ -3856,7 +3856,7 @@ static uiBlock *block_create_save_file_forwardcompat_dialog(bContext *C,
     BLI_path_split_file_part(blendfile_path, filename, sizeof(filename));
   }
   else {
-    SNPRINTF(filename, "%s.blend", DATA_("untitled"));
+    SNPRINTF(filename, "%s.af", DATA_("untitled"));
     /* Since this dialog should only be shown when re-saving an existing file, current filepath
      * should never be empty. */
     BLI_assert_unreachable();
@@ -4061,7 +4061,7 @@ static uiBlock *block_create__close_file_dialog(struct bContext *C,
     BLI_path_split_file_part(blendfile_path, filename, sizeof(filename));
   }
   else {
-    SNPRINTF(filename, "%s.blend", DATA_("untitled"));
+    SNPRINTF(filename, "%s.af", DATA_("untitled"));
   }
   uiItemL(layout, filename, ICON_NONE);
 

@@ -210,7 +210,7 @@ class TOPBAR_MT_editor_menus(Menu):
 
 
 class TOPBAR_MT_blender(Menu):
-    bl_label = "Blender"
+    bl_label = "Anime Forge"
 
     def draw(self, _context):
         layout = self.layout

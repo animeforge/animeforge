@@ -3154,7 +3154,7 @@ class WM_MT_splash_quick_setup(Menu):
         sub = col.column(heading="Shortcuts")
         text = bpy.path.display_name(kc.name)
         if not text:
-            text = "Blender"
+            text = "Anime Forge"
         sub.menu("USERPREF_MT_keyconfigs", text=text)
 
         has_select_mouse = hasattr(kc_prefs, "select_mouse")
@@ -3231,10 +3231,7 @@ class WM_MT_splash(Menu):
 
             # Links if no recent files
             col2_title.label(text="Getting Started")
-
-            col2.operator("wm.url_open_preset", text="Manual", icon='URL').type = 'MANUAL'
-            col2.operator("wm.url_open_preset", text="Blender Website", icon='URL').type = 'BLENDER'
-            col2.operator("wm.url_open_preset", text="Credits", icon='URL').type = 'CREDITS'
+            col2.operator("wm.url_open", text="Anime Forge Website", icon='URL').url = "https://anime-forge.ru/"
 
         layout.separator()
 
@@ -3246,10 +3243,6 @@ class WM_MT_splash(Menu):
         sub.operator("wm.open_mainfile", text="Open...", icon='FILE_FOLDER')
         col1.operator("wm.recover_last_session", icon='RECOVER_LAST')
 
-        col2 = split.column()
-
-        col2.operator("wm.url_open_preset", text="Release Notes", icon='URL').type = 'RELEASE_NOTES'
-        col2.operator("wm.url_open_preset", text="Development Fund", icon='FUND').type = 'FUND'
 
         layout.separator()
         layout.separator()
@@ -3283,17 +3276,13 @@ class WM_MT_splash_about(Menu):
         del _ghost_backend, ghost_backend
 
         col.separator(factor=2.0)
-        col.label(text="Blender is free software")
+        col.label(text="Anime Forege is free software")
+        col.label(text="(based on Blender source code by Blender Foundation)")
         col.label(text="Licensed under the GNU General Public License")
 
         col = split.column(align=True)
         col.emboss = 'PULLDOWN_MENU'
-        col.operator("wm.url_open_preset", text="Release Notes", icon='URL').type = 'RELEASE_NOTES'
-        col.operator("wm.url_open_preset", text="Credits", icon='URL').type = 'CREDITS'
-        col.operator("wm.url_open", text="License", icon='URL').url = "https://www.blender.org/about/license/"
-        col.operator("wm.url_open_preset", text="Blender Website", icon='URL').type = 'BLENDER'
-        col.operator("wm.url_open", text="Blender Store", icon='URL').url = "https://store.blender.org"
-        col.operator("wm.url_open_preset", text="Development Fund", icon='FUND').type = 'FUND'
+        col.operator("wm.url_open", text="Anime Forge Website", icon='URL').url = "https://anime-forge.ru/"
 
 
 class WM_OT_drop_blend_file(Operator):

@@ -154,7 +154,7 @@ if(WIN32 AND NOT UNIX)
 
   list(APPEND SRC
     ${CMAKE_SOURCE_DIR}/release/windows/icons/winblender.rc
-    ${CMAKE_BINARY_DIR}/blender.exe.manifest
+    ${CMAKE_BINARY_DIR}/animeforge.exe.manifest
   )
 endif()
 
@@ -315,21 +315,21 @@ if(WITH_PYTHON_MODULE)
   endif()
 
 else()
-  add_executable(blender ${EXETYPE} ${SRC})
+  add_executable(animeforge ${EXETYPE} ${SRC})
   if(WIN32)
-    add_executable(blender-launcher WIN32
+    add_executable(animeforge-launcher WIN32
       blender_launcher_win32.c
       ${CMAKE_SOURCE_DIR}/release/windows/icons/winblender.rc
       ${CMAKE_BINARY_DIR}/blender.exe.manifest
     )
-    target_compile_definitions (blender-launcher PRIVATE -D_UNICODE -DUNICODE)
-    target_link_libraries(blender-launcher Pathcch.lib)
+    target_compile_definitions (animeforge-launcher PRIVATE -D_UNICODE -DUNICODE)
+    target_link_libraries(animeforge-launcher Pathcch.lib)
   endif()
 endif()
 
 if(WITH_BUILDINFO)
   # Explicitly say that the executable depends on the `buildinfo`.
-  add_dependencies(blender buildinfo)
+  add_dependencies(animeforge buildinfo)
 endif()
 
 
@@ -488,7 +488,7 @@ if(WITH_INTERNATIONAL)
     locales
     DEPENDS ${_all_mo_files}
   )
-  add_dependencies(blender locales)
+  add_dependencies(animeforge locales)
 
   # Generate INSTALL rules.
   install(
@@ -549,7 +549,7 @@ endif()
 if("${CMAKE_GENERATOR}" MATCHES ".*Makefiles.*")
   # Message to display after building.
   add_custom_command(
-    TARGET blender POST_BUILD MAIN_DEPENDENCY blender
+    TARGET animeforge POST_BUILD MAIN_DEPENDENCY animeforge
     COMMAND
       ${CMAKE_COMMAND} -E
       echo 'now run: \"make install\" to copy runtime files and scripts to ${TARGETDIR_VER}'
@@ -603,12 +603,12 @@ if(UNIX AND NOT APPLE)
   if(WITH_PYTHON_MODULE)
     if(WITH_INSTALL_PORTABLE)
       install(
-        TARGETS blender
+        TARGETS animeforge
         DESTINATION ${TARGETDIR_BPY}
       )
     else()
       install(
-        TARGETS blender
+        TARGETS animeforge
         LIBRARY DESTINATION ${TARGETDIR_BPY}
       )
     endif()
@@ -616,21 +616,21 @@ if(UNIX AND NOT APPLE)
     # none of the other files are needed currently
   elseif(WITH_INSTALL_PORTABLE)
     install(
-      TARGETS blender
+      TARGETS animeforge
       DESTINATION "."
     )
 
     install(
       FILES
-        ${CMAKE_SOURCE_DIR}/release/freedesktop/blender.desktop
-        ${CMAKE_SOURCE_DIR}/release/freedesktop/icons/scalable/apps/blender.svg
-        ${CMAKE_SOURCE_DIR}/release/freedesktop/icons/symbolic/apps/blender-symbolic.svg
+        ${CMAKE_SOURCE_DIR}/release/freedesktop/animeforge.desktop
+        ${CMAKE_SOURCE_DIR}/release/freedesktop/icons/scalable/apps/animeforge.svg
+        ${CMAKE_SOURCE_DIR}/release/freedesktop/icons/symbolic/apps/animeforge-symbolic.svg
       DESTINATION "."
     )
 
     if(WITH_BLENDER_THUMBNAILER)
       install(
-        TARGETS blender-thumbnailer
+        TARGETS animeforge-thumbnailer
         DESTINATION "."
       )
     endif()
@@ -643,8 +643,8 @@ if(UNIX AND NOT APPLE)
 
       install(
         PROGRAMS
-        ${CMAKE_SOURCE_DIR}/release/bin/blender-launcher
-        ${CMAKE_SOURCE_DIR}/release/bin/blender-softwaregl
+        ${CMAKE_SOURCE_DIR}/release/bin/animeforge-launcher
+        ${CMAKE_SOURCE_DIR}/release/bin/animeforge-softwaregl
         DESTINATION "."
       )
 
@@ -673,20 +673,20 @@ if(UNIX AND NOT APPLE)
 
     # Misc files.
     install(
-      FILES ${CMAKE_SOURCE_DIR}/release/freedesktop/blender.desktop
+      FILES ${CMAKE_SOURCE_DIR}/release/freedesktop/animeforge.desktop
       DESTINATION share/applications
     )
     install(
-      FILES ${CMAKE_SOURCE_DIR}/release/freedesktop/icons/scalable/apps/blender.svg
+      FILES ${CMAKE_SOURCE_DIR}/release/freedesktop/icons/scalable/apps/animeforge.svg
       DESTINATION share/icons/hicolor/scalable/apps
     )
     install(
-      FILES ${CMAKE_SOURCE_DIR}/release/freedesktop/icons/symbolic/apps/blender-symbolic.svg
+      FILES ${CMAKE_SOURCE_DIR}/release/freedesktop/icons/symbolic/apps/animeforge-symbolic.svg
       DESTINATION share/icons/hicolor/symbolic/apps
     )
     if(WITH_BLENDER_THUMBNAILER)
       install(
-        TARGETS blender-thumbnailer
+        TARGETS animeforge-thumbnailer
         DESTINATION bin
       )
     endif()
@@ -1396,7 +1396,7 @@ elseif(APPLE)
 
   if(WITH_BLENDER_THUMBNAILER)
     install(
-      TARGETS blender-thumbnailer
+      TARGETS animeforge-thumbnailer
       DESTINATION Blender.app/Contents/MacOS/
     )
   endif()
@@ -1533,18 +1533,18 @@ endif()
 # -----------------------------------------------------------------------------
 # Setup link libraries
 
-add_dependencies(blender makesdna)
-target_link_libraries(blender ${LIB})
+add_dependencies(animeforge makesdna)
+target_link_libraries(animeforge ${LIB})
 unset(LIB)
 
-setup_platform_linker_flags(blender)
-setup_platform_linker_libs(blender)
+setup_platform_linker_flags(animeforge)
+setup_platform_linker_libs(animeforge)
 
 if(DEFINED PLATFORM_SYMBOLS_MAP)
-  set_target_properties(blender PROPERTIES LINK_DEPENDS ${PLATFORM_SYMBOLS_MAP})
+  set_target_properties(animeforge PROPERTIES LINK_DEPENDS ${PLATFORM_SYMBOLS_MAP})
 endif()
 
-blender_target_include_dirs(blender ${INC})
+blender_target_include_dirs(animeforge ${INC})
 
 # -----------------------------------------------------------------------------
 # USD registry.
@@ -1674,7 +1674,7 @@ endif()
 
 if(WIN32 AND NOT WITH_PYTHON_MODULE)
   install(
-    TARGETS blender blender-launcher
+    TARGETS blender animeforge-launcher
     COMPONENT Blender
     DESTINATION "."
   )

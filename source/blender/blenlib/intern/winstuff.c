@@ -73,9 +73,9 @@ bool BLI_windows_register_blend_extension(const bool background)
 
   /* Replace the actual app name with the wrapper. */
   {
-    char *blender_app = strstr(BlPath, "blender.exe");
+    char *blender_app = strstr(BlPath, "animeforge.exe");
     if (blender_app != NULL) {
-      strcpy(blender_app, "blender-launcher.exe");
+      strcpy(blender_app, "animeforge-launcher.exe");
     }
   }
 

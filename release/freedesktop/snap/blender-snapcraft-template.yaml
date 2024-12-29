@@ -19,9 +19,9 @@ confinement: classic
 
 apps:
     blender:
-        command: ./blender-wrapper
-        desktop: ./blender.desktop
-        common-id: org.blender.Blender
+        command: ./animeforge-wrapper
+        desktop: ./animeforge.desktop
+        common-id: org.animeforge.AnimeForge
 
 base: core20
 version: '@VERSION@'
@@ -34,7 +34,7 @@ parts:
         build-attributes: [keep-execstack, no-patchelf]
         override-build: |
             snapcraftctl build
-            sed -i 's|Icon=blender|Icon=${SNAP}/blender.svg|' ${SNAPCRAFT_PART_INSTALL}/blender.desktop
+            sed -i 's|Icon=animeforge|Icon=${SNAP}/animeforge.svg|' ${SNAPCRAFT_PART_INSTALL}/animeforge.desktop
         stage-packages:
             - libxcb1
             - libxext6
@@ -47,4 +47,4 @@ parts:
         plugin: dump
         source: .
         stage:
-            - ./blender-wrapper
+            - ./animeforge-wrapper

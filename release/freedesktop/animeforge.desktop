@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Anime Forge
+GenericName=Animation IDE
+Comment=3D modeling, animation, rendering and post-production
+Keywords=3d;cg;modeling;animation;painting;sculpting;texturing;video editing;video tracking;rendering;render engine;cycles;game engine;python;
+Exec=animeforge %f
+Icon=animeforge
+Terminal=false
+Type=Application
+PrefersNonDefaultGPU=true
+X-KDE-RunOnDiscreteGpu=true
+Categories=Graphics;3DGraphics;
+MimeType=application/x-animeforge;

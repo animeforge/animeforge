@@ -51,7 +51,7 @@ ALLOWED_LIBS = (
     "libfreetype.so",
 )
 
-IGNORE_FILES = ("blender-launcher", "blender-softwaregl", )
+IGNORE_FILES = ("animeforge-launcher", "animeforge-softwaregl", )
 IGNORE_EXTENSION = (".sh", ".py", )
 
 

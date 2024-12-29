@@ -48,7 +48,7 @@ function(add_python_test testname testscript)
   add_test(
     NAME ${testname}
     COMMAND ${TEST_PYTHON_EXE} ${TEST_PYTHON_EXE_EXTRA_ARGS} ${testscript} ${ARGN}
-    WORKING_DIRECTORY $<TARGET_FILE_DIR:blender>
+    WORKING_DIRECTORY $<TARGET_FILE_DIR:animeforge>
   )
 
   set(_lsan_options "exitcode=0")

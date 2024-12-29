@@ -73,3 +73,5 @@ waveletNoiseTile.bin
 CMakeSettings.json
 CMakePresets.json
 CMakeUserPresets.json
+
+/cmake-build-debug

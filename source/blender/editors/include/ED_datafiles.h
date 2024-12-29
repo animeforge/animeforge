@@ -34,8 +34,8 @@ extern const char datatoc_prvicons_png[];
 extern int datatoc_alert_icons_png_size;
 extern const char datatoc_alert_icons_png[];
 
-extern int datatoc_blender_logo_png_size;
-extern const char datatoc_blender_logo_png[];
+extern int datatoc_animeforge_logo_png_size;
+extern const char datatoc_animeforge_logo_png[];
 
 extern int datatoc_splash_png_size;
 extern const char datatoc_splash_png[];

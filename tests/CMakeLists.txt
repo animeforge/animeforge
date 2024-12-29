@@ -9,14 +9,14 @@ set(TEST_INSTALL_DIR ${CMAKE_INSTALL_PREFIX_WITH_CONFIG})
 
 # Path to Blender and Python executables for all platforms.
 if(MSVC)
-  set(TEST_BLENDER_EXE ${TEST_INSTALL_DIR}/blender.exe)
+  set(TEST_BLENDER_EXE ${TEST_INSTALL_DIR}/animeforge.exe)
 elseif(APPLE)
   set(TEST_BLENDER_EXE ${TEST_INSTALL_DIR}/Blender.app/Contents/MacOS/Blender)
 else()
   if(WITH_INSTALL_PORTABLE)
-    set(TEST_BLENDER_EXE ${TEST_INSTALL_DIR}/blender)
+    set(TEST_BLENDER_EXE ${TEST_INSTALL_DIR}/animeforge)
   else()
-    set(TEST_BLENDER_EXE ${TEST_INSTALL_DIR}/bin/blender)
+    set(TEST_BLENDER_EXE ${TEST_INSTALL_DIR}/bin/animeforge)
   endif()
 endif()
 
@@ -58,7 +58,7 @@ endif()
 
 # Blender as python module tests.
 if(WITH_PYTHON_MODULE)
-  add_subdirectory(blender_as_python_module)
+  add_subdirectory(animeforge_as_python_module)
 endif()
 
 # GTest

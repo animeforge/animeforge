@@ -326,10 +326,10 @@ endif
 # Allow passing in own BLENDER_BIN so developers who don't
 # use the default build path can still use utility helpers.
 ifeq ($(OS), Darwin)
-	BLENDER_BIN?="$(BUILD_DIR)/bin/Blender.app/Contents/MacOS/Blender"
-	BLENDER_BIN_DIR?="$(BUILD_DIR)/bin/Blender.app/Contents/MacOS/Blender"
+	BLENDER_BIN?="$(BUILD_DIR)/bin/Blender.app/Contents/MacOS/AnimeForge"
+	BLENDER_BIN_DIR?="$(BUILD_DIR)/bin/Blender.app/Contents/MacOS/AnimeForge"
 else
-	BLENDER_BIN?="$(BUILD_DIR)/bin/blender"
+	BLENDER_BIN?="$(BUILD_DIR)/bin/animeforge"
 	BLENDER_BIN_DIR?="$(BUILD_DIR)/bin"
 endif
 
@@ -389,9 +389,9 @@ all: .FORCE
 	@echo
 	@echo Edit build configuration with: \"$(BUILD_DIR)/CMakeCache.txt\" run make again to rebuild.
 	@if test -z "$(BLENDER_IS_PYTHON_MODULE)"; then \
-		echo Blender successfully built, run from: $(BLENDER_BIN); \
+		echo Anime Forge successfully built, run from: $(BLENDER_BIN); \
 	else \
-		echo Blender successfully built as a Python module, \"bpy\" can be imported from: $(BLENDER_BIN_DIR); \
+		echo Anime Forge successfully built as a Python module, \"bpy\" can be imported from: $(BLENDER_BIN_DIR); \
 	fi
 	@echo
 

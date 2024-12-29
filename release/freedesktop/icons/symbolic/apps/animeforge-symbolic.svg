@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="49.999989mm"
+   height="52.223835mm"
+   viewBox="0 0 49.999989 52.223835"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0, 2021-09-20)"
+   sodipodi:docname="рисунок.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.64"
+     inkscape:cx="-5.46875"
+     inkscape:cy="134.375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1021"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:lockguides="false" />
+  <defs
+     id="defs2">
+    <style
+       id="style2">
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #373737;
+      }
+
+      .cls-4 {
+        isolation: isolate;
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <rect
+         class="cls-2"
+         width="800"
+         height="800"
+         id="rect4"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     transform="translate(-80.177322,-113.421)">
+    <path
+       id="path136"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.312646"
+       d="m 105.28085,114.70822 a 24.999987,24.999794 0 0 0 -24.999721,25.0002 24.999987,24.999794 0 0 0 24.999721,24.99981 24.999987,24.999794 0 0 0 25.00027,-24.99981 24.999987,24.999794 0 0 0 -25.00027,-25.0002 z" />
+    <g
+       id="g84"
+       transform="matrix(0.26458333,0,0,0.26458333,-1.0767343,34.014938)">
+      <g
+         class="cls-1"
+         clip-path="url(#clippath)"
+         id="g46">
+        <g
+           id="_Без-названия"
+           data-name=" Без-названия">
+          <g
+             id="g43">
+            <path
+               class="cls-3"
+               d="M 421.76,408.29 371.38,321.03"
+               id="path9" />
+            <path
+               class="cls-3"
+               d="m 348.54,465.73 50.3,-87.12"
+               id="path11" />
+            <path
+               class="cls-3"
+               d="M 416.02,408.36 401.73,383.6 v 0 l -14.29,24.76"
+               id="path13" />
+            <path
+               class="cls-3"
+               d="m 368.63,440.92 16.08,-27.85"
+               id="path15" />
+            <g
+               id="g23">
+              <path
+                 class="cls-3"
+                 d="M 380.06,355.72 332.55,438 380.06,355.72"
+                 id="path17" />
+              <path
+                 class="cls-3"
+                 d="m 334.7,434.11 c -1.36,2.35 -1.36,5.25 0,7.61 l 13.87,24.02 48.08,-83.33 c 1.36,-2.35 1.36,-5.25 0,-7.6 l -30.98,-53.69 -4.55,7.93 c -0.67,1.17 -0.67,2.62 0,3.79 l 5.65,9.8 h 5.63 l 7.6,13.14 -45.31,78.33 v 0 z"
+                 id="path19" />
+              <path
+                 class="cls-3"
+                 d="m 464.84,440.88 c 2.72,0 5.23,-1.45 6.59,-3.8 l 13.86,-24.03 -96.2,0.07 c -2.71,0 -5.22,1.45 -6.58,3.8 l -30.99,53.69 9.14,-0.03 c 1.35,0 2.6,-0.73 3.28,-1.9 l 5.66,-9.8 -2.83,-4.87 7.58,-13.16 90.49,0.04 v 0 z"
+                 id="path21" />
+            </g>
+            <path
+               class="cls-3"
+               d="m 450.92,403.37 -47.52,-82.32 47.52,82.32"
+               id="path25" />
+            <path
+               class="cls-3"
+               d="M 398.84,378.62 365.6,321.03"
+               id="path27" />
+            <path
+               class="cls-3"
+               d="m 365.67,321.12 -5.66,9.82"
+               id="path29" />
+            <path
+               class="cls-3"
+               d="m 468.6,398.25 -2.9,5.02"
+               id="path31" />
+            <path
+               class="cls-3"
+               d="m 488.11,408.17 -5.67,-9.82"
+               id="path33" />
+            <g
+               id="g39">
+              <path
+                 class="cls-3"
+                 d="M 451,403.26 403.42,321.02 451,403.26"
+                 id="path35" />
+              <path
+                 class="cls-3"
+                 d="m 405.72,324.83 c -1.36,-2.35 -3.87,-3.8 -6.59,-3.8 l -27.74,0.02 48.2,83.26 c 1.36,2.35 3.87,3.79 6.58,3.79 l 61.99,-0.04 -4.6,-7.9 c -0.19,-0.33 -0.43,-0.62 -0.7,-0.87 -0.69,-0.65 -1.62,-1.02 -2.59,-1.02 h -11.32 l -2.8,4.89 -15.19,0.02 -45.24,-78.37 z"
+                 id="path37" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         class="cls-4"
+         id="g70">
+        <g
+           class="cls-4"
+           id="g68">
+          <path
+             id="path56"
+             class="cls-3"
+             transform="translate(-54.269859,0.3115728)"
+             d="m 442.86719,501.8125 c -0.25814,0.076 -1.03536,0.29126 -0.77344,0.22852 0.26581,-0.0638 0.52637,-0.14663 0.78906,-0.22266 -0.005,-0.002 -0.0106,-0.004 -0.0156,-0.006 z" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Слой 2"
+     transform="translate(-80.177322,-113.421)" />
+</svg>

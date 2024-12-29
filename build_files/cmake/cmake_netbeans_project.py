@@ -196,7 +196,7 @@ def create_nb_project_main():
 
         f.write('          <buildCommand>%s</buildCommand>\n' % escape(build_cmd))
         f.write('          <cleanCommand>%s</cleanCommand>\n' % escape(clean_cmd))
-        f.write('          <executablePath>./bin/blender</executablePath>\n')
+        f.write('          <executablePath>./bin/animeforge</executablePath>\n')
         del build_cmd, clean_cmd
 
         def write_toolinfo():
@@ -234,7 +234,7 @@ def create_nb_project_main():
         f.write('      <runprofile version="9">\n')
         f.write('        <runcommandpicklist>\n')
         f.write('        </runcommandpicklist>\n')
-        f.write('        <runcommand>%s</runcommand>\n' % os.path.join(CMAKE_DIR, "bin/blender"))
+        f.write('        <runcommand>%s</runcommand>\n' % os.path.join(CMAKE_DIR, "bin/animeforge"))
         f.write('        <rundir>%s</rundir>\n' % SOURCE_DIR)
         f.write('        <buildfirst>false</buildfirst>\n')
         f.write('        <terminal-type>0</terminal-type>\n')

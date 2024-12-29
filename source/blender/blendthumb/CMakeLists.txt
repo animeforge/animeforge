@@ -41,16 +41,16 @@ if(WIN32)
 
 else()
   # -----------------------------------------------------------------------------
-  # Build `blender-thumbnailer` executable
+  # Build `animeforge-thumbnailer` executable
 
   set(SRC_CMD
     src/blender_thumbnailer.cc
   )
 
-  add_executable(blender-thumbnailer ${SRC} ${SRC_CMD})
-  setup_platform_linker_flags(blender-thumbnailer)
-  target_link_libraries(blender-thumbnailer bf_blenlib)
+  add_executable(animeforge-thumbnailer ${SRC} ${SRC_CMD})
+  setup_platform_linker_flags(animeforge-thumbnailer)
+  target_link_libraries(animeforge-thumbnailer bf_blenlib)
   if(DEFINED PTHREADS_LIBRARIES)
-    target_link_libraries(blender-thumbnailer ${PTHREADS_LIBRARIES})
+    target_link_libraries(animeforge-thumbnailer ${PTHREADS_LIBRARIES})
   endif()
 endif()

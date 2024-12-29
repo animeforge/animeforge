@@ -10,14 +10,14 @@
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
   if(NOT DEFINED WITH_IN_SOURCE_BUILD)
     message(FATAL_ERROR
-      "CMake generation for blender is not allowed within the source directory!"
+      "CMake generation for animeforge is not allowed within the source directory!"
       "\n Remove \"${CMAKE_SOURCE_DIR}/CMakeCache.txt\" and try again from another folder, e.g.:"
       "\n "
       "\n rm -rf CMakeCache.txt CMakeFiles"
       "\n cd .."
       "\n mkdir cmake-make"
       "\n cd cmake-make"
-      "\n cmake ../blender"
+      "\n cmake ../animeforge"
       "\n "
       "\n Alternately define WITH_IN_SOURCE_BUILD to force this option (not recommended!)"
     )
@@ -182,7 +182,7 @@ else()
     set(_option_default OFF)
   endif()
   option(WITH_BLENDER_THUMBNAILER "\
-Build stand-alone \"blender-thumbnailer\" command-line thumbnail extraction utility, \
+Build stand-alone \"animeforge-thumbnailer\" command-line thumbnail extraction utility, \
 intended for use by file-managers to extract PNG images from `.blend` files."
     ${_option_default}
   )
@@ -201,7 +201,7 @@ mark_as_advanced(WITH_PYTHON_SECURITY)
 
 option(WITH_PYTHON_SAFETY "Enable internal API error checking to track invalid data to prevent crash on access (at the expense of some efficiency, only enable for development)." OFF)
 mark_as_advanced(WITH_PYTHON_SAFETY)
-option(WITH_PYTHON_MODULE "Enable building as a python module which runs without a user interface, like running regular blender in background mode (experimental, only enable for development), installs to PYTHON_SITE_PACKAGES (or CMAKE_INSTALL_PREFIX if WITH_INSTALL_PORTABLE is enabled)." OFF)
+option(WITH_PYTHON_MODULE "Enable building as a python module which runs without a user interface, like running regular animeforge in background mode (experimental, only enable for development), installs to PYTHON_SITE_PACKAGES (or CMAKE_INSTALL_PREFIX if WITH_INSTALL_PORTABLE is enabled)." OFF)
 
 option(WITH_BUILDINFO     "Include extra build details (only disable for development & faster builds)" ON)
 set(BUILDINFO_OVERRIDE_DATE "" CACHE STRING "Use instead of the current date for reproducible builds (empty string disables this option)")
@@ -427,7 +427,7 @@ that point to pre-compiled libraries will be left as-is."
   )
   mark_as_advanced(WITH_LIBS_PRECOMPILED)
 
-  option(WITH_STATIC_LIBS "Try to link with static libraries, as much as possible, to make blender more portable across distributions" OFF)
+  option(WITH_STATIC_LIBS "Try to link with static libraries, as much as possible, to make animeforge more portable across distributions" OFF)
   if(WITH_STATIC_LIBS)
     option(WITH_BOOST_ICU "Boost uses ICU library (required for linking with static Boost built with libicu)." OFF)
     mark_as_advanced(WITH_BOOST_ICU)
@@ -448,7 +448,7 @@ Install redistributable runtime, otherwise install into CMAKE_INSTALL_PREFIX"
   )
 endif()
 
-option(WITH_PYTHON_INSTALL       "Copy system python into the blender install folder" ON)
+option(WITH_PYTHON_INSTALL       "Copy system python into the animeforge install folder" ON)
 
 option(WITH_INSTALL_COPYRIGHT    "Copy the official Blender Foundation's copyright.txt into the Blender install folder" OFF)
 mark_as_advanced(WITH_INSTALL_COPYRIGHT)
@@ -466,15 +466,15 @@ elseif(WITH_PYTHON_INSTALL OR WITH_PYTHON_NUMPY)
   mark_as_advanced(PYTHON_NUMPY_INCLUDE_DIRS)
 endif()
 if(WITH_PYTHON_INSTALL)
-  option(WITH_PYTHON_INSTALL_NUMPY "Copy system NumPy into the blender install folder"  ON)
+  option(WITH_PYTHON_INSTALL_NUMPY "Copy system NumPy into the animeforge install folder"  ON)
 
   if(UNIX AND NOT APPLE)
-    option(WITH_PYTHON_INSTALL_REQUESTS "Copy system requests into the blender install folder" ON)
+    option(WITH_PYTHON_INSTALL_REQUESTS "Copy system requests into the animeforge install folder" ON)
     set(PYTHON_REQUESTS_PATH "" CACHE PATH "Path to python site-packages or dist-packages containing 'requests' module")
     mark_as_advanced(PYTHON_REQUESTS_PATH)
   endif()
 
-  option(WITH_PYTHON_INSTALL_ZSTANDARD "Copy zstandard into the blender install folder" ON)
+  option(WITH_PYTHON_INSTALL_ZSTANDARD "Copy zstandard into the animeforge install folder" ON)
   set(PYTHON_ZSTANDARD_PATH "" CACHE PATH "Path to python site-packages or dist-packages containing 'zstandard' module")
   mark_as_advanced(PYTHON_ZSTANDARD_PATH)
 endif()
@@ -1872,7 +1872,7 @@ include(build_files/cmake/packaging.cmake)
 # Use Dynamic Loading for OpenMP
 
 if(WITH_BLENDER)
-  openmp_delayload(blender)
+  openmp_delayload(animeforge)
 endif()
 
 

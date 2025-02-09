@@ -153,7 +153,7 @@ if(WIN32 AND NOT UNIX)
 
 
   list(APPEND SRC
-    ${CMAKE_SOURCE_DIR}/release/windows/icons/winblender.rc
+    ${CMAKE_SOURCE_DIR}/release/windows/icons/winanimeforge.rc
     ${CMAKE_BINARY_DIR}/animeforge.exe.manifest
   )
 endif()
@@ -319,7 +319,7 @@ else()
   if(WIN32)
     add_executable(animeforge-launcher WIN32
       blender_launcher_win32.c
-      ${CMAKE_SOURCE_DIR}/release/windows/icons/winblender.rc
+      ${CMAKE_SOURCE_DIR}/release/windows/icons/winanimeforge.rc
       ${CMAKE_BINARY_DIR}/blender.exe.manifest
     )
     target_compile_definitions (animeforge-launcher PRIVATE -D_UNICODE -DUNICODE)

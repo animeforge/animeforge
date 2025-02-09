@@ -85,11 +85,11 @@ if(WIN32)
   set(CPACK_PACKAGE_INSTALL_DIRECTORY "Blender Foundation/Blender ${MAJOR_VERSION}.${MINOR_VERSION}")
   set(CPACK_PACKAGE_INSTALL_REGISTRY_KEY "Blender Foundation/Blender ${MAJOR_VERSION}.${MINOR_VERSION}")
 
-  set(CPACK_NSIS_MUI_ICON ${CMAKE_SOURCE_DIR}/release/windows/icons/winblender.ico)
+  set(CPACK_NSIS_MUI_ICON ${CMAKE_SOURCE_DIR}/release/windows/icons/winanimeforge.ico)
   set(CPACK_NSIS_COMPRESSOR "/SOLID lzma")
 
   set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_SOURCE_DIR}/release/license/GPL-3.0.txt)
-  set(CPACK_WIX_PRODUCT_ICON ${CMAKE_SOURCE_DIR}/release/windows/icons/winblender.ico)
+  set(CPACK_WIX_PRODUCT_ICON ${CMAKE_SOURCE_DIR}/release/windows/icons/winanimeforge.ico)
 
   set(BLENDER_NAMESPACE_GUID "507F933F-5898-404A-9A05-18282FD491A6")
 

@@ -9,8 +9,8 @@
 	#define BLEN_VER_RC_STR STRINGIFY(BLEN_VER_RC_STR_M)
 #endif
 
-APPICON ICON DISCARDABLE "winblender.ico"
-BLENDERFILE ICON DISCARDABLE "winblenderfile.ico"
+APPICON ICON DISCARDABLE "winanimeforge.ico"
+BLENDERFILE ICON DISCARDABLE "winanimeforgefile.ico"
 
 pointer_cursor CURSOR "cursors/pointer.cur"
 moveew_cursor CURSOR "cursors/moveew.cur"

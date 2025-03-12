@@ -1563,7 +1563,7 @@ static char *wm_main_playanim_intern(int argc, const char **argv)
 
     GHOST_AddEventConsumer(g_WS.ghost_system, ghost_event_consumer);
 
-    playanim_window_open("Blender Animation Player", start_x, start_y, ibuf->x, ibuf->y);
+    playanim_window_open("Anime Forge Animation Player", start_x, start_y, ibuf->x, ibuf->y);
   }
 
   GHOST_GetMainDisplayDimensions(g_WS.ghost_system, &maxwinx, &maxwiny);

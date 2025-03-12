@@ -1026,7 +1026,7 @@ int wm_window_new_exec(bContext *C, wmOperator *op)
   ScrArea *area = BKE_screen_find_big_area(CTX_wm_screen(C), SPACE_TYPE_ANY, 0);
 
   bool ok = (WM_window_open(C,
-                            IFACE_("Blender"),
+                            IFACE_("Anime Forge"),
                             0,
                             0,
                             win_src->sizex * 0.95f,

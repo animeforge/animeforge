@@ -147,7 +147,7 @@ ScrArea *render_view_open(bContext *C, int mx, int my, ReportList *reports)
 
     /* changes context! */
     if (WM_window_open(C,
-                       IFACE_("Blender Render"),
+                       IFACE_("Anime Forge Render"),
                        mx,
                        my,
                        sizex,

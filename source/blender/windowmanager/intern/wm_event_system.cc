@@ -2648,7 +2648,7 @@ static eHandlerActionFlag wm_handler_fileselect_do(bContext *C,
       ScrArea *area;
 
       if ((area = ED_screen_temp_space_open(C,
-                                            IFACE_("Blender File View"),
+                                            IFACE_("Anime Forge File View"),
                                             WM_window_pixels_x(win) / 2,
                                             WM_window_pixels_y(win) / 2,
                                             U.file_space_data.temp_win_sizex * UI_SCALE_FAC,

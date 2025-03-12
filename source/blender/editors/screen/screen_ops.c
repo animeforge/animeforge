@@ -5122,7 +5122,7 @@ static int userpref_show_exec(bContext *C, wmOperator *op)
 
   /* changes context! */
   if (WM_window_open(C,
-                     IFACE_("Blender Preferences"),
+                     IFACE_("Anime Forge Preferences"),
                      event->xy[0],
                      event->xy[1],
                      sizex,

@@ -1,7 +1,9 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 import bpy
-from bpy.types import Header, Menu, Panel
-
+from bpy.types import Header, Menu, Panel, Operator
+from bpy.props import StringProperty
+from bpy_extras.io_utils import ExportHelper
+from bpy.app.translations import pgettext_data as data_
 from bpy.app.translations import (
     pgettext_iface as iface_,
     contexts as i18n_contexts,
@@ -556,10 +558,42 @@ class TOPBAR_MT_file_previews(Menu):
         layout.operator("wm.previews_clear")
         layout.operator("wm.previews_batch_clear")
 
+class RENDER_OT_custom_render_animation(Operator, ExportHelper):
+    """Custom render animation with file selection"""
+    bl_idname = "render.custom_render_animation"
+    bl_label = "Render Animation"
+    bl_options = {'REGISTER'}
+
+    # Настройки файлового диалога
+    filename_ext = ".png"
+    filter_glob: StringProperty(
+        default="*.png;*.jpg;*.jpeg;*.exr;*.tiff;*.tga;*.bmp;*.mp4;*.avi",
+        options={'HIDDEN'},
+    ) # type: ignore
+
+    def invoke(self, context, _event):
+        import os
+
+        self.filename_ext=os.path.splitext(context.scene.render.filepath)[1]
+
+        self.filepath = context.scene.render.filepath
+        if (not self.filepath) or (self.filepath.endswith("/")):
+            self.filepath = data_("untitled.mp4")
+
+        context.window_manager.fileselect_add(self)
+        return {'RUNNING_MODAL'}
+
+    def execute(self, context):
+        # Устанавливаем путь для сохранения
+        context.scene.render.filepath = self.filepath
+        
+        # Запускаем рендер анимации
+        bpy.ops.render.render('INVOKE_DEFAULT', animation=True, use_viewport=True)
+        
+        return {'FINISHED'}
 
 class TOPBAR_MT_render(Menu):
     bl_label = "Render"
-
     def draw(self, context):
         layout = self.layout
 
@@ -567,11 +601,9 @@ class TOPBAR_MT_render(Menu):
 
         layout.operator("render.render", text="Render Image",
                         icon='RENDER_STILL').use_viewport = True
-        props = layout.operator(
-            "render.render", text="Render Animation", icon='RENDER_ANIMATION')
-        props.animation = True
-        props.use_viewport = True
-
+        layout.operator(
+            "render.custom_render_animation", text="Render Animation", icon='RENDER_ANIMATION')
+        
         layout.separator()
 
         layout.operator("sound.mixdown", text="Render Audio...")
@@ -960,6 +992,7 @@ classes = (
     TOPBAR_PT_gpencil_primitive,
     TOPBAR_PT_name,
     TOPBAR_PT_name_marker,
+    RENDER_OT_custom_render_animation,
 )
 
 if __name__ == "__main__":  # only for live edit.

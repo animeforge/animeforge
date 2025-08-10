@@ -219,7 +219,7 @@ bool BKE_appdir_folder_caches(char *path, const size_t path_maxncpy)
 #elif defined(__APPLE__)
   BLI_path_join(path, path_maxncpy, caches_root_path, "Blender", SEP_STR);
 #else /* __linux__ */
-  BLI_path_join(path, path_maxncpy, caches_root_path, "blender", SEP_STR);
+  BLI_path_join(path, path_maxncpy, caches_root_path, "animeforge", SEP_STR);
 #endif
 
   return true;

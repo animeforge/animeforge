@@ -46,37 +46,20 @@ const char *GHOST_SystemPathsUnix::getUserDir(int version, const char *versionst
   static string user_path = "";
   static int last_version = 0;
 
-  /* in blender 2.64, we migrate to XDG. to ensure the copy previous settings
-   * operator works we give a different path depending on the requested version */
-  if (version < 264) {
-    if (user_path.empty() || last_version != version) {
-      const char *home = getenv("HOME");
-
-      last_version = version;
-
-      if (home) {
-        user_path = string(home) + "/.blender/" + versionstr;
-      }
-      else {
-        return nullptr;
-      }
-    }
-    return user_path.c_str();
-  }
   if (user_path.empty() || last_version != version) {
     const char *home = getenv("XDG_CONFIG_HOME");
 
     last_version = version;
 
     if (home) {
-      user_path = string(home) + "/blender/" + versionstr;
+      user_path = string(home) + "/animeforge/" + versionstr;
     }
     else {
       home = getenv("HOME");
       if (home == nullptr) {
         home = getpwuid(getuid())->pw_dir;
       }
-      user_path = string(home) + "/.config/blender/" + versionstr;
+      user_path = string(home) + "/.config/animeforge/" + versionstr;
     }
   }
 

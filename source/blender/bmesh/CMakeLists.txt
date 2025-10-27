@@ -221,6 +221,7 @@ blender_add_lib(bf_bmesh "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
 
 if(MSVC AND NOT MSVC_CLANG)
   target_compile_options(bf_bmesh PRIVATE /WX /wd4101)
+  target_compile_options(bf_bmesh PRIVATE /WX /wd4101 /wd5287)
 endif()
 
 if(WITH_GTESTS)

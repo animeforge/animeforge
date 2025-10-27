@@ -18,6 +18,12 @@ Project Pages
 - [Main Website](http://anime-forge.ru)
 
 
+Building on Linux
+-----------------
+* ./build_files/utils/make_update.py --use-linux-libraries
+* ...
+
+
 License
 -------
 

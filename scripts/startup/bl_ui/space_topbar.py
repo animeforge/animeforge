@@ -564,12 +564,11 @@ class RENDER_OT_custom_render_animation(Operator, ExportHelper):
     bl_label = "Render Animation"
     bl_options = {'REGISTER'}
 
-    # Настройки файлового диалога
     filename_ext = ".png"
     filter_glob: StringProperty(
         default="*.png;*.jpg;*.jpeg;*.exr;*.tiff;*.tga;*.bmp;*.mp4;*.avi",
         options={'HIDDEN'},
-    ) # type: ignore
+    )
 
     def invoke(self, context, _event):
         import os
@@ -584,12 +583,19 @@ class RENDER_OT_custom_render_animation(Operator, ExportHelper):
         return {'RUNNING_MODAL'}
 
     def execute(self, context):
-        # Устанавливаем путь для сохранения
+        import os
+        import bpy
         context.scene.render.filepath = self.filepath
-        
-        # Запускаем рендер анимации
         bpy.ops.render.render('INVOKE_DEFAULT', animation=True, use_viewport=True)
-        
+        render_path = bpy.path.abspath(self.filepath)
+        src_file = render_path + ".src.txt"
+        blend_path = bpy.data.filepath
+        render_dir = os.path.dirname(render_path)
+        relative_blend = os.path.relpath(blend_path, render_dir)
+
+        with open(src_file, "w", encoding="utf-8") as f:
+            f.write(relative_blend)
+
         return {'FINISHED'}
 
 class TOPBAR_MT_render(Menu):

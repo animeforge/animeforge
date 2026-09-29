@@ -828,6 +828,13 @@ static AVStream *alloc_video_stream(FFMpegContext *context,
     }
   }
 
+  if (codec_id == AV_CODEC_ID_PRORES) {
+    /* Apple ProRes 422 HQ. Bitrate settings are ignored by this encoder:
+     * quality is fixed by the profile. */
+    c->profile = FF_PROFILE_PRORES_HQ;
+    c->pix_fmt = AV_PIX_FMT_YUV422P10LE;
+  }
+
   if (codec_id == AV_CODEC_ID_FFV1) {
     c->pix_fmt = AV_PIX_FMT_RGB32;
   }
@@ -875,6 +882,14 @@ static AVStream *alloc_video_stream(FFMpegContext *context,
   }
   else if (codec->capabilities & AV_CODEC_CAP_SLICE_THREADS) {
     c->thread_type = FF_THREAD_SLICE;
+  }
+
+  if (codec_id == AV_CODEC_ID_PRORES) {
+    /* The prores encoder declares frame-thread support, but avcodec_open2()
+     * fails with EINVAL when frame threading is enabled; it is
+     * single-threaded anyway. */
+    c->thread_count = 1;
+    c->thread_type = 0;
   }
 
   int ret = avcodec_open2(c, codec, &opts);

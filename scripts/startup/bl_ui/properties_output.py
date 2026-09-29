@@ -478,6 +478,10 @@ class RENDER_PT_encoding_video(RenderOutputButtonsPanel, Panel):
         sub.active = ffmpeg.use_max_b_frames
         sub.prop(ffmpeg, "max_b_frames", text="")
 
+        if ffmpeg.codec == 'PRORES':
+            # ProRes quality is fixed by the profile; bitrate is ignored by the encoder.
+            return
+
         if not use_crf or ffmpeg.constant_rate_factor == 'NONE':
             col = layout.column()
 

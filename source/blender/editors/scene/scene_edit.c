@@ -253,11 +253,10 @@ static int scene_new_exec(bContext *C, wmOperator *op)
 }
 
 static EnumPropertyItem scene_new_items[] = {
-    {SCE_COPY_NEW, "NEW", 0, "New", "Add a new, empty scene with default settings"},
     {SCE_COPY_EMPTY,
      "EMPTY",
      0,
-     "Copy Settings",
+     "New",
      "Add a new, empty scene, and copy settings from the current scene"},
     {SCE_COPY_LINK_COLLECTION,
      "LINK_COPY",
@@ -284,7 +283,7 @@ static void SCENE_OT_new(wmOperatorType *ot)
   ot->flag = OPTYPE_REGISTER | OPTYPE_UNDO;
 
   /* properties */
-  ot->prop = RNA_def_enum(ot->srna, "type", scene_new_items, SCE_COPY_NEW, "Type", "");
+  ot->prop = RNA_def_enum(ot->srna, "type", scene_new_items, SCE_COPY_EMPTY, "Type", "");
   RNA_def_property_translation_context(ot->prop, BLT_I18NCONTEXT_ID_SCENE);
 }
 
@@ -322,7 +321,7 @@ static const EnumPropertyItem *scene_new_sequencer_enum_itemf(bContext *C,
   int totitem = 0;
   uint item_index;
 
-  item_index = RNA_enum_from_value(scene_new_items, SCE_COPY_NEW);
+  item_index = RNA_enum_from_value(scene_new_items, SCE_COPY_EMPTY);
   RNA_enum_item_add(&item, &totitem, &scene_new_items[item_index]);
 
   bool has_scene_or_no_context = false;
@@ -339,7 +338,7 @@ static const EnumPropertyItem *scene_new_sequencer_enum_itemf(bContext *C,
   }
 
   if (has_scene_or_no_context) {
-    int values[] = {SCE_COPY_EMPTY, SCE_COPY_LINK_COLLECTION, SCE_COPY_FULL};
+    int values[] = {SCE_COPY_LINK_COLLECTION, SCE_COPY_FULL};
     for (int i = 0; i < ARRAY_SIZE(values); i++) {
       item_index = RNA_enum_from_value(scene_new_items, values[i]);
       RNA_enum_item_add(&item, &totitem, &scene_new_items[item_index]);

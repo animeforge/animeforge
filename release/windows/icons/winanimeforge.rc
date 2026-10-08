@@ -49,11 +49,11 @@ BEGIN
     BEGIN
       VALUE "FileVersion", BLEN_VER_RC_STR
       VALUE "ProductVersion", BLEN_VER_RC_STR
-      VALUE "CompanyName", "Blender Foundation"
-      VALUE "FileDescription", "Blender"
+      VALUE "CompanyName", "Anime-Forge Company"
+      VALUE "FileDescription", "Anime-Forge"
       VALUE "LegalCopyright", "GPLv3 (Blender Foundation)"
-      VALUE "OriginalFilename", "blender.exe"
-      VALUE "ProductName", "Blender"
+      VALUE "OriginalFilename", "animeforge.exe"
+      VALUE "ProductName", "Anime-Forge"
     END
   END
   BLOCK "VarFileInfo"

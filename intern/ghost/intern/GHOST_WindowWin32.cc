@@ -118,7 +118,7 @@ GHOST_WindowWin32::GHOST_WindowWin32(GHOST_SystemWin32 *system,
   m_hDC = ::GetDC(m_hWnd);
 
   if (!setDrawingContextType(type)) {
-    const char *title = "Blender - Unsupported Graphics Card Configuration";
+    const char *title = "Anime-Forge - Unsupported Graphics Card Configuration";
     const char *text =
         "A graphics card and driver with support for OpenGL 3.3 or higher is "
         "required.\n\nInstalling the latest driver for your graphics card might resolve the "

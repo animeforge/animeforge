@@ -2587,7 +2587,7 @@ GHOST_TSuccess GHOST_SystemWin32::showMessageBox(const char *title,
   config.pszMainIcon = (dialog_options & GHOST_DialogError   ? TD_ERROR_ICON :
                         dialog_options & GHOST_DialogWarning ? TD_WARNING_ICON :
                                                                TD_INFORMATION_ICON);
-  config.pszWindowTitle = L"Blender";
+  config.pszWindowTitle = L"Anime-Forge";
   config.pszMainInstruction = title_16;
   config.pszContent = message_16;
   config.pButtons = (link) ? buttons : buttons + 1;
@@ -2664,7 +2664,7 @@ static bool isStartedFromCommandPrompt()
     if (getProcessName(ppid, parent_name, sizeof(parent_name))) {
       char *filename = strrchr(parent_name, '\\');
       if (filename != NULL) {
-        start_from_launcher = strstr(filename, "blender.exe") != NULL;
+        start_from_launcher = strstr(filename, "animeforge-launcher.exe") != NULL;
       }
     }
 

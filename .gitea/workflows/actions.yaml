@@ -13,7 +13,8 @@ jobs:
         run: |
           cd /home/morevna/animeforge-git/animeforge
           git checkout ${{ gitea.ref }}
-          git pull
+          git reset --hard
+          git pull https://tvoygit.ru/${{ gitea.repository }}.git ${{ gitea.ref }}
       - name: Build sources
         run: |
           bash /home/morevna/animeforge-git/animeforge-build-win.sh

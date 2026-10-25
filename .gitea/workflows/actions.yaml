@@ -1,0 +1,20 @@
+name: Gitea Actions Demo
+run-name: ${{ gitea.actor }} is testing out Gitea Actions 🚀
+on: [push]
+
+jobs:
+  Build-Windows:
+    runs-on: win
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ gitea.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by Gitea!"
+      - run: echo "🔎 The name of your branch is ${{ gitea.ref }} and your repository is ${{ gitea.repository }}."
+      - name: Check out repository code
+        run: |
+          cd /home/morevna/animeforge-git/animeforge
+          git checkout ${{ gitea.ref }}
+          git pull
+      - name: Build sources
+        run: |
+          bash /home/morevna/animeforge-git/animeforge-build-win.sh
+      - run: echo "🍏 This job's status is ${{ job.status }}."

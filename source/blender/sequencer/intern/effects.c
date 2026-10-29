@@ -1824,7 +1824,7 @@ static void init_transform_effect(Sequence *seq)
 
   transform->rotIni = 0.0f;
 
-  transform->interpolation = 1;
+  transform->interpolation = 2;
   transform->percent = 1;
   transform->uniform_scale = 0;
 }
